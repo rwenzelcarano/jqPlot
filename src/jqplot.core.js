@@ -296,7 +296,7 @@
                 return window.G_vmlCanvasManager.initElement(canvas);
             }
 
-            var cctx = canvas.getContext('2d');
+            var cctx = canvas.getContext('2d', $.jqplot.config.canvasContextAttributes);
 
             var canvasBackingScale = 1;
             if (window.devicePixelRatio > 1 && (cctx.webkitBackingStorePixelRatio === undefined || 
@@ -376,7 +376,8 @@
         gapLength: 4,
         dotGapLength: 2.5,
         srcLocation: 'jqplot/src/',
-        pluginLocation: 'jqplot/src/plugins/'
+        pluginLocation: 'jqplot/src/plugins/',
+        canvasContextAttributes: { willReadFrequently: true }
     };
     
     
